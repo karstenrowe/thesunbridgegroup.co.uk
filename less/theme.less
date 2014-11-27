@@ -1,0 +1,411 @@
+/*!
+ * Start Bootstrap - Agency Bootstrap Theme (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+@import "variables.less";
+@import "mixins.less";
+
+// Type
+body {
+	font-family: @body-font;
+	font-size: @normal;
+	line-height: 24px;
+	color: @grey;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: @headline-font;
+	font-weight: 700;
+	letter-spacing: 1px;
+}
+ul,
+ol {
+	margin: 0 0 20px 0;
+	padding: 0 0 0 20px;
+}
+// Links
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+	outline: none;
+}
+a {
+	color: @link;
+}
+a:hover {
+	color: @link-hover;
+}
+a:focus,
+a:active {
+	color: @link-hover;
+	background: @brand-bg;
+}
+// Buttons
+.btn:focus,
+.btn:active,
+.btn.active,
+.btn:active:focus {
+	outline: none;
+}
+.btn-primary {
+	font-size: @normal;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	text-shadow: 0 -1px 0 @brand-dk;
+	background: @brand;
+	box-shadow: 0 3px 0 0 @brand-dk;
+	border: none;
+	border-radius: 3px;
+	margin: 5px 5px 5px 0;
+	padding: 8px 20px;
+	&:hover {
+		background: @brand-dk;
+		box-shadow: 0 3px 0 0 black;
+	}
+	&.size-lg {
+		font-size: @big;
+		padding: 14px 40px;
+	}
+}
+// Highlight Color Customization
+::-moz-selection {
+    text-shadow: none;
+    background: @brand;
+}
+
+::selection {
+    text-shadow: none;
+    background: @brand;
+}
+
+img::selection {
+    background: transparent;
+}
+
+img::-moz-selection {
+    background: transparent;
+}
+
+body {
+    webkit-tap-highlight-color: @brand;
+}
+
+// Custom Navigation Bar
+
+.navbar-default {
+	background-color: @grey-dk;
+	border-color: transparent;
+	.navbar-collapse {
+		border-color: fade(white, 2%);
+	}
+	.navbar-toggle {
+		background-color: @brand;
+		border-color: @brand;
+		.icon-bar {
+			background-color: white;
+		}
+		&:hover,
+		&:focus {
+			background-color: @brand;
+		}
+	}
+    .nav {
+    	li {
+    		a {
+    			text-transform: uppercase;
+	    		font-weight: 600;
+    			letter-spacing: 1px;
+    			color: @link-hover;
+    			margin-left: 20px;
+    			padding: 10px 12px;
+    			&:hover,
+    			&:focus {
+    				color: @link;
+    			}
+    		}
+    	}
+    }
+	.navbar-nav>.active>a {
+		border-radius: 0;
+		color: white;
+		background-color: @brand;
+	}
+	.navbar-nav>.active>a:hover,
+	.navbar-nav>.active>a:focus {
+		color: white;
+		background-color: darken(@brand, 10%);
+	}
+}
+
+@media(min-width:768px) {
+  .navbar-default {
+  	background-color: #fff;
+  	background-color: rgba(255,255,255,0.85);
+  	box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  	border-bottom: 1px solid #fff;
+    padding: 15px 0;
+    -webkit-transition: padding 0.3s;
+    -moz-transition: padding 0.3s;
+    transition: padding 0.3s;
+    .navbar-brand {
+      //font-size: 2em;
+    	.2x('../img/logo-the-sunbridge-group.png', "no-repeat", 243px, 24px);
+    	background-size: 100% !important;
+    	width: 243px;
+    	height: 24px;
+    	margin: 14px 0 0 0;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      transition: all 0.3s;
+			&:hover {
+				opacity: 0.85;
+			}
+    }
+		.navbar-nav>.active>a {
+			border-radius: 3px;
+		}
+  }
+  .navbar-default.navbar-shrink {
+    padding: 5px 0;
+		.navbar-brand {
+    	background-size: 90% !important;
+    }
+	}
+}
+
+// hero
+header {
+	text-align: center;
+	color: white;
+	.2x('../img/hero-bg.jpg', "no-repeat", 425px, 253px);
+	background-size: 83% !important;
+	background-position: 50% 18px;
+	.intro-text {
+		padding-top: 100px;
+		padding-bottom: 50px;
+		.intro-lead-in,
+		.intro-heading {
+			font-family: @headline-font;
+			font-style: italic;
+			font-size: 22px;
+			line-height: 22px;
+			font-weight: 700;
+			letter-spacing: 1px;
+			color: @grey-dk;
+			background: rgba(255,255,255,0.5);
+			margin-bottom: 12px;
+			padding: 1px 4px 3px 4px;
+		}
+		.intro-heading {
+			color: @brand;
+			margin-bottom: 30px;
+		}
+	}
+}
+
+@media(min-width:768px) {
+	header {
+		.intro-text {
+			padding-top: 430px;
+			padding-bottom: 100px;
+		}
+	}
+}
+
+// Shared section styles
+section {
+  padding: 20px 0;
+  h3.section-subheading {
+		font-size: 16px;
+		font-family: @headline-font;
+		text-transform: none;
+		font-style: italic;
+		font-weight: 400;
+		margin-bottom: 30px;
+  }
+  h2, h4 { color: @brand; }
+}
+
+@media(min-width:768px) {
+	section {
+		padding: 60px 0;
+	}
+}
+
+// About section
+section#about {
+	background: @grey-bg;
+}
+
+// Portfolio Section
+
+#portfolio {
+    .portfolio-item {
+        margin: 0 0 15px;
+        right: 0;
+        .portfolio-link {
+            display: block;
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto;
+            .portfolio-hover {
+                background: fade(@brand, 90%);
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: all ease 0.5s;
+                -webkit-transition: all ease 0.5s;
+                -moz-transition: all ease 0.5s;
+                &:hover {
+                    opacity: 1;
+                }
+                .portfolio-hover-content {
+                    position: absolute;
+                    width: 100%;
+                    height: 20px;
+                    font-size: 20px;
+                    text-align: center;
+                    top: 50%;
+                    margin-top: -12px;
+                    color: white;
+                    i {
+                        margin-top: -12px;
+                    }
+                    h3,
+                    h4 {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+        .portfolio-caption {
+        	max-width: 400px;
+        	margin: 0 auto;
+        	background-color: white;
+        	text-align: center;
+        	padding: 25px;
+        	h4 {
+        		text-transform: none;
+        		margin: 0;
+        	}
+        	p {
+						font-family: @headline-font;
+        		font-style: italic;
+        		font-size: 16px;
+        		margin: 0;
+        	}
+        }
+    }
+    * {
+        z-index: 2;
+    }
+}
+
+@media(min-width:767px) {
+    #portfolio {
+        .portfolio-item {
+            margin: 0 0 30px;
+        }
+    }
+}
+
+// Footer
+footer {
+	background-color: @grey-bg;
+	padding: 80px 0;
+	p {
+		//font-size: @small;
+		color: @grey-lt;
+		margin: 0;
+		.fa {
+			font-size: 18px;
+			position: relative;
+			top: 1px;
+			width: 25px
+		}
+		a {
+			vertical-align: top;
+			color: @grey-lt;
+			&:hover {
+				text-decoration: none;
+				color: @brand;
+			}
+		}
+	}
+	p.company-copyright {
+		color: @brand;
+	}
+}
+
+.portfolio-modal {
+	.modal-content {
+	    border-radius: 0;
+	    background-clip: border-box;
+	    -webkit-box-shadow: none;
+	    box-shadow: none;
+	    border: none;
+	    min-height: 100%;
+	    padding: 100px 0;
+	    text-align: center;
+		h2 {
+	    	margin-bottom: 15px;
+	    	font-size: 3em;
+		}
+		p {
+			margin-bottom: 30px;
+		}
+		p.item-intro {
+			margin: 20px 0 30px;
+			font-family: @headline-font;
+			font-style: italic;
+			font-size: 16px;
+		}
+		ul.list-inline {
+			margin-bottom: 30px;
+			margin-top: 0;
+		}
+		img {
+			margin-bottom: 30px;
+		}
+	}
+    .close-modal {
+        position: absolute;
+        width:75px;
+        height:75px;
+        background-color:transparent;
+        top: 25px;
+        right: 25px;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.3;
+        }
+        .lr {
+            height:75px;
+            width:1px;
+            margin-left:35px;
+            background-color:@grey-dk;
+            transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            /* IE 9 */
+            -webkit-transform: rotate(45deg);
+            /* Safari and Chrome */
+            z-index:1051;
+            .rl {
+                height:75px;
+                width:1px;
+                background-color:@grey-dk;
+                transform: rotate(90deg);
+                -ms-transform: rotate(90deg);
+                /* IE 9 */
+                -webkit-transform: rotate(90deg);
+                /* Safari and Chrome */
+                z-index:1052;
+            }
+        }
+    }
+}
